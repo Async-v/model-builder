@@ -1,0 +1,13 @@
+import React from "react";
+import { CheckCircle2, HardDrive, Palette, ShieldCheck } from "lucide-react";
+
+export default function Preferences({ showToast }) {
+  return <div className="mx-auto max-w-[900px]">
+    <div className="mb-8"><p className="mb-2 text-xs font-medium text-accent">WORKSPACE</p><h1 className="text-[28px] font-semibold tracking-[-.045em] sm:text-[32px]">Preferences</h1><p className="mt-2 text-sm text-muted">A few details about how this workspace behaves.</p></div>
+    <div className="space-y-4">
+      <section className="rounded-2xl border border-line bg-white p-5 shadow-soft"><div className="flex items-start gap-3"><div className="flex h-10 w-10 items-center justify-center rounded-xl bg-canvas text-muted"><HardDrive size={17}/></div><div className="flex-1"><h2 className="text-sm font-semibold">Local storage</h2><p className="mt-1 text-xs leading-5 text-muted">Your current schema is saved in this browser using local storage. It is not synced to an account or cloud service.</p><div className="mt-4 flex items-center gap-2 rounded-lg bg-[#f4faf5] px-3 py-2 text-[11px] text-[#557361]"><CheckCircle2 size={14}/> Local persistence enabled</div></div></div></section>
+      <section className="rounded-2xl border border-line bg-white p-5 shadow-soft"><div className="flex items-start gap-3"><div className="flex h-10 w-10 items-center justify-center rounded-xl bg-canvas text-muted"><Palette size={17}/></div><div className="flex-1"><h2 className="text-sm font-semibold">Appearance</h2><p className="mt-1 text-xs leading-5 text-muted">Schema Studio uses a consistent light, neutral design system for clarity.</p><div className="mt-4 flex items-center gap-2"><span className="h-6 w-6 rounded-md border border-line bg-white"/><span className="h-6 w-6 rounded-md bg-[#f7f9f7]"/><span className="h-6 w-6 rounded-md bg-[#24785b]"/><span className="ml-1 text-[11px] text-muted">Soft neutral · Forest accent</span></div></div></div></section>
+      <section className="rounded-2xl border border-line bg-white p-5 shadow-soft"><div className="flex items-start gap-3"><div className="flex h-10 w-10 items-center justify-center rounded-xl bg-canvas text-muted"><ShieldCheck size={17}/></div><div className="flex-1"><h2 className="text-sm font-semibold">Privacy & security</h2><p className="mt-1 text-xs leading-5 text-muted">This demo has no sign-in or server-side AI provider. Do not store secrets or sensitive production schemas in this prototype.</p><button onClick={() => showToast("This demo does not connect to external services")} className="mt-3 text-xs font-semibold text-accent hover:underline">Review connection status</button></div></div></section>
+    </div>
+  </div>;
+}
